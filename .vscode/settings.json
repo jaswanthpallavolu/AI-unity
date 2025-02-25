@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ML-in-unity.sln"
+    "dotnet.defaultSolution": "ML-in-unity.sln",
+    "editor.codeLens": false,
 }
