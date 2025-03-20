@@ -13,7 +13,11 @@ public class Sequence : Node
     {
         Status childStatus = children[currentChild].Process();
         if (childStatus == Status.RUNNING) return Status.RUNNING;
-        else if (childStatus == Status.FAILURE) return Status.FAILURE;
+        else if (childStatus == Status.FAILURE)
+        {
+            this.Reset();
+            return Status.FAILURE;
+        }
 
         currentChild++;
         if (currentChild >= children.Count)

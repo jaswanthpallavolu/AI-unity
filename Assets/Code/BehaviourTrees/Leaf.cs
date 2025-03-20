@@ -31,10 +31,13 @@ public class Leaf : Node
 
     public override Status Process()
     {
+        Status status;
         if (ProcessMethod != null)
-            return ProcessMethod();
+            status = ProcessMethod();
         else if (ProcessMethodM != null)
-            return ProcessMethodM(index);
-        return Status.FAILURE;
+            status = ProcessMethodM(index);
+        else status = Status.FAILURE;
+        Debug.Log(name + " " + status);
+        return status;
     }
 }
